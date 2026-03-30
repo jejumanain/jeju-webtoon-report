@@ -3,7 +3,7 @@
 **제주 웹툰 생태계, 우리 함께 '용천수'를 틔워볼까요?**  
 본 레파지토리는 **제주만화인연대(Jeju Manhwa-in Solidarity)**가 주관하는 '제주 웹툰 생태계 리포트 및 설문조사' 웹페이지의 소스코드를 담고 있습니다. 
 
-🌐 **웹사이트 바로가기:** [https://(계정명).github.io/jeju-webtoon-report/](https://(계정명).github.io/jeju-webtoon-report/)  
+🌐 **웹사이트 바로가기:** [https://jejumanain.github.io/jeju-webtoon-report/](https://(계정명).github.io/jeju-webtoon-report/)  
 📝 **설문조사 바로가기:** [구글 폼 링크](https://forms.gle/yi1NxVAtNnACEvWp8)
 
 ---
@@ -53,6 +53,7 @@
 * **Instagram:** [@jeju_manain](https://www.instagram.com/JEJU_MANAIN/)
 * **X (Twitter):** [@jejumanain](https://x.com/jejumanain)
 * **Metaverse (ZEP):** [제주만화인광장](https://zep.us/play/lp91oe)
+* **KakaoTalk Open Chat:** [제만연 카카오톡 오픈커뮤니티](https://open.kakao.com/o/g9c0817d)
 
 ---
 *이 프로젝트는 제주 지역 웹툰 창작자들의 권리 향상과 건강한 생태계 조성을 위해 자발적으로 기획되었습니다. 여러분의 많은 참여와 공유 부탁드립니다!*
