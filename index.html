@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제주 웹툰 생태계 상생 리포트 | Jeju Webtoon Harmony</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        jejuBlue: '#005BAC',
+                        jejuDark: '#222222',
+                        jejuOrange: '#FF7F00',
+                        jejuBg: '#F9FAFB'
+                    },
+                    fontFamily: {
+                        sans: ['Pretendard', 'Noto Sans KR', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="./resource/style.css">
+</head>
+<body class="antialiased">
+    <!-- Navigation Bar -->
+    <nav class="page-naviation">
+        <div class="inner-wrap">
+            <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
+                <img class="logo" src="./resource/jejumanain_white_logo.svg" alt="제주만화인연대"></span>
+            </div>
+            <div class="page-manu hidden md:flex space-x-8">
+                <a href="#intro" class="transition-colors">소개</a>
+                <a href="#data-analysis" class="transition-colors">데이터분석</a>
+                <a href="#core-values" class="transition-colors">전략자산</a>
+                <a href="#action-blueprint" class="transition-colors">정책제언</a>
+                <a href="#survey" class="transition-colors">설문</a>
+            </div>
+            <!-- Mobile menu button -->
+            <div class="md:hidden flex items-center">
+                <button id="mobile-menu-btn" class="text-2xl">
+                    ☰
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden space-y-1 sm:px-3">
+                <a href="#intro" class="mobile-link">소개</a>
+                <a href="#data-analysis" class="mobile-link block">데이터분석</a>
+                <a href="#core-values" class="mobile-link">전략자산</a>
+                <a href="#action-blueprint" class="mobile-link">정책제언</a>
+                <a href="#survey" class="mobile-link">설문</a>
+        </div>
+      </nav>
+
+    <!-- Hero Section -->
+    <section id="intro" class="main-head lg:px-8 fade-up">
+        <div data-aos="zoom-in" data-aos-delay="200" class="page-sub-title">2026 Jeju Webtoon Survey</div>
+        <h1 class="page-main-title">
+            제주 만화 생태계 활성화를 위한<br/>
+            <span class="gradient-text">
+              제주 만화인 리서치
+              <svg class="absolute w-full h-3 -bottom-1 left-0 text-orange-500/30" viewBox="0 0 100 10"
+                preserveAspectRatio="none">
+                <path d="M0 5 Q 50 10 100 5" stroke="currentColor" stroke-width="3" fill="transparent" />
+              </svg>
+            </span>
+        </h1>
+        <p class="page-description">
+            '웹툰'을 통해 다시 꽃을 피운 '만화'<br>
+            그러나 정량적 숫자 키우기에 급급하다 보니 '다양성'을 잃어 버리고<br>
+            그 중심에서 밤낮 없이 애쓴 창작자들이 권리와 건강을 잃어버리는 일이 비일비재합니다.
+        </p>
+        <p class="page-description">
+            그렇다면 제주 지역의 만화는 지금 어떤가요?
+        </p>
+        <p class="page-description">
+            제주만화인연대는 2026년 5월 16일 국립숙천대학교에서<br>
+            <strong class="text-jejuDark">만화웹툰산업, 지역이 대안이다</strong>라는 주제로 열리는
+            한국만화웹툰학회 봄 학술대회에서 <br>
+            <strong class="text-jejuDark">제주 지역 만화 생태계</strong>에 대해 발제를 진행합니다.
+        </p>
+        <p class="page-description">
+            보다 생생한 제주 지역 만화의 현장을 알리기 위해<br>아래 리서치 내용에 여러분의 목소리를 더해주세요!
+        </p>
+        <a href="#overview" class="main-btn bg-jejuOrange rounded-full transition-all transform hover:scale-105">리포트 탐색하기 ↓
+        </a>
+    </section>
+
+    <!-- Section 1: overview -->
+    <section id="overview" class="section">
+        <div class="section-header fade-up delay order01">
+            <h2 class="section-title">행정의 고충과 창작자의 현실,<br><span class="gradient-text italic">그 접점을 찾습니다</span></h2>
+        </div>
+        <div class="flex">
+            <div class="round box fade-left delay order02">
+                <div class="flex items-center text-orange-600 mb-6 font-black text-xl">
+                  <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mr-4">
+                    <i class="fa-solid fa-user-pen"></i>
+                  </div>
+                  창작자의 목소리
+                </div>
+                <ul class="text-slate-600 space-y-4 font-medium">
+                  <li class="flex items-start bg-white/60 p-4 rounded-xl shadow-sm"><i class="fa-solid fa-check text-orange-400 mt-1 mr-3"></i><span>방어적 행정과 규정으로 가로막힌 창의적 에너지</span></li>
+                  <li class="flex items-start bg-white/60 p-4 rounded-xl shadow-sm"><i class="fa-solid fa-check text-orange-400 mt-1 mr-3"></i><span>경직된 운영으로 인한 창작자간의 교류 부재</span></li>
+                  <li class="flex items-start bg-white/60 p-4 rounded-xl shadow-sm"><i class="fa-solid fa-check text-orange-400 mt-1 mr-3"></i><span>정량적 전시적 성과 추구로 인한 지역 창작자들의 소외</span></li>
+                </ul>
+            </div>
+            <div class="round box fade-right delay order02">
+                <div class="flex items-center text-blue-600 mb-6 font-black text-xl">
+                  <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                    <i class="fa-solid fa-building-user"></i>
+                  </div>
+                  행정 기관의 고충
+                </div>
+                <ul class="text-slate-600 space-y-4 font-medium">
+                  <li class="flex items-start bg-white/60 p-4 rounded-xl shadow-sm"><i class="fa-solid fa-check text-blue-400 mt-1 mr-3"></i><span>반복되는 민원에 의한 보안 및 규정 강화의 불가피성</span></li>
+                  <li class="flex items-start bg-white/60 p-4 rounded-xl shadow-sm"><i class="fa-solid fa-check text-blue-400 mt-1 mr-3"></i><span>유연한 운영을 뒷받침할 상위 법적 근거(조례)의 부재</span>
+                  </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: data-analysis -->
+    <section id="data-analysis" class="section">
+        <div class="section-header fade-up">
+            <span class="section-sub-title">Data Analysis</span>
+            <h2 class="section-title">커뮤니티 및 KPI 대조 지표</h2>
+            <p class="section-description">
+              일부 민원으로 인한 방어적 행정과 규정 때문에 가로막힌 창의적 에너지.<br>
+              양측의 고충 사례를 모두 수집하여 실효성 있는 정책 대안을 도출합니다.
+            </p>
+            <div
+              class="btn-tab  backdrop-blur-sm shadow-inner">
+              <button onclick="updateChart('freq')" id="btn-freq"
+                class="tab-btn tab-active shadow-sm transition-all">불편
+                빈도</button>
+              <button onclick="updateChart('gap')" id="btn-gap"
+                class="tab-btn shadow-sm transition-all">인식
+                격차</button>
+            </div>
+        </div>
+        <div class="grid lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
+          <!-- Chart Area -->
+          <div data-aos="fade-right"
+            class="lg:col-span-7 glass-effect p-6 md:p-8 rounded-[2.5rem] shadow-lg border-white/60 overflow-hidden relative flex flex-col justify-center">
+            <div class="chart-container">
+              <canvas id="mainChart"></canvas>
+            </div>
+          </div>
+
+          <!-- Info List Area (Scrollbar Removed) -->
+          <div data-aos="fade-left" data-aos-delay="100" class="lg:col-span-5 h-full flex flex-col">
+            <h3
+              class="text-sm font-black text-slate-800 uppercase tracking-widest px-2 mb-4 flex items-center bg-white/50 py-2 rounded-lg backdrop-blur-sm border border-white">
+              <i class="fa-solid fa-chart-pie text-orange-500 mr-3"></i>상세 분석 맥락 (Context)
+            </h3>
+            <div id="info-list-container" class="space-y-4 flex-grow">
+              <!-- JS Data Rendering -->
+            </div>
+          </div>
+        </div>
+        
+        <div class="round box fade-up text-center">
+            <h3><i
+              class="fa-solid fa-circle-info mr-3 text-blue-500"></i>데이터 산출 방식</h4></h3>
+            <ul class="grid md:grid-cols-3 gap-6">
+              <li class="bg-white/60 p-5 rounded-2xl shadow-sm backdrop-blur-sm relative transition hover:-translate-y-1">
+                <span class="font-bold text-slate-900 block mb-2 mt-1">표본 데이터 수집</span>
+                <p class="text-sm text-slate-600 leading-relaxed">최근 12개월간의 지역 만화인 커뮤니티 채팅 로그(2,482건)와 제주콘텐츠진흥원 5개년 사업계획서 추출
+                </p>
+              </li>
+              <li class="bg-white/60 p-5 rounded-2xl shadow-sm backdrop-blur-sm relative transition hover:-translate-y-1">
+                <span class="font-bold text-slate-900 block mb-2 mt-1">키워드 가중 산출</span>
+                <p class="text-sm text-slate-600 leading-relaxed">'규제', '불만' 등 부정적 코퍼스의 출현 빈도와 반응(이모지, 재답변) 수를 합산하여 가중 점수 부여
+                </p>
+              </li>
+              <li class="bg-white/60 p-5 rounded-2xl shadow-sm backdrop-blur-sm relative transition hover:-translate-y-1">
+                <span class="font-bold text-slate-900 block mb-2 mt-1">인식 격차 측정</span>
+                <p class="text-sm text-slate-600 leading-relaxed">기관 성과 지표(KPI)와 실제 현장 발언 비중을 동일 카테고리로 매칭하여 편차 값을 시각화</p>
+              </li>
+            </ul>
+        </div>     
+    </section>
+    
+    <!-- Section 4: core-values -->
+    <section id="core-values" class="section">
+        <div class="section-header fade-up">
+            <span class="section-sub-title">Strategic Assets</span>
+            <h2 class="section-title">제주 웹툰 생태계의 3대 전략 자산</h2>
+        </div>
+        <div class="flex">
+          <div class="round box fade-up delay order01">
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-orange-50 rounded-bl-full -z-10 transition-transform group-hover:scale-110">
+            </div>
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-orange-100 to-orange-50 rounded-2xl flex items-center justify-center mb-8 shadow-inner">
+              <i
+                class="fa-solid fa-plane-departure text-orange-600 text-2xl group-hover:block transition-transform duration-300 group-hover:-translate-y-1"></i>
+            </div>
+            <h3 class="font-bold text-2xl mb-4 text-slate-800">글로벌 허브 제주</h3>
+            <p class="text-slate-500 text-base leading-relaxed">제주공항의 연결성은 단순한 교통수단을 넘어, 해외 작가들이 머물며 창작하는 <strong
+                class="text-slate-700">글로벌 레지던시</strong>의 핵심 자산입니다.</p>
+          </div>
+
+          <div class="round box fade-up delay order02">
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-full -z-10 transition-transform group-hover:scale-110">
+            </div>
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-blue-100 to-blue-50 rounded-2xl flex items-center justify-center mb-8 shadow-inner">
+              <i
+                class="fa-solid fa-earth-asia text-blue-600 text-2xl group-hover:block transition-transform duration-300 group-hover:-translate-y-1"></i>
+            </div>
+            <h3 class="font-bold text-2xl mb-4 text-slate-800">무사증 제도의 전략화</h3>
+            <p class="text-slate-500 text-base leading-relaxed">제주만의 <strong class="text-slate-700">무사증 제도</strong>는 해외 인재
+              유입의 장벽을 낮춥니다. 이를 활용한 특화된 비즈니스 트랙이 필요합니다.</p>
+          </div>
+
+          <div class="round box fade-up delay order03">
+            <div
+              class="absolute top-0 right-0 w-32 h-32 bg-purple-50 rounded-bl-full -z-10 transition-transform group-hover:scale-110">
+            </div>
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-purple-100 to-purple-50 rounded-2xl flex items-center justify-center mb-8 shadow-inner">
+              <i
+                class="fa-solid fa-graduation-cap text-purple-600 text-2xl group-hover:block transition-transform duration-300 group-hover:-translate-y-1"></i>
+            </div>
+            <h3 class="font-bold text-2xl mb-4 text-slate-800">교육의 평등과 기회</h3>
+            <p class="text-slate-500 text-base leading-relaxed">독립 학과의 부재로 인한 <strong class="text-slate-700">데뷔 기회
+                소외</strong>를 극복해야 합니다. 도 차원의 교육 트랙 마련은 공정의 문제입니다.</p>
+          </div>
+        </div>
+    </section>
+    
+    <!-- Section 5: action-blueprint -->
+    <section id="action-blueprint" class="section">
+        <div class="section-header fade-up">
+            <span class="section-sub-title">Action Blueprint</span>
+            <h2 class="section-title">상생 성장을 위한 대상별 핵심 솔루션 제언</h2>
+        </div>
+        
+      <div class="space-y-6 max-w-4xl mx-auto">
+        <!-- Politics -->
+        <div class="box fade-up">
+          <button onclick="toggleAcc('acc1')"
+            class="w-full text-left px-8 md:px-10 py-6 md:py-8 flex justify-between items-center font-black text-slate-800 hover:bg-white/50 transition">
+            <div class="flex items-center">
+              <div
+                class="w-14 h-14 bg-gradient-to-br from-slate-100 to-slate-200 rounded-2xl flex items-center justify-center mr-6 text-slate-700 shadow-inner">
+                <i class="fa-solid fa-building-columns text-xl"></i>
+              </div>
+              <span class="text-lg md:text-xl">정치인: 유연한 행정을 위한 조례 및 예산 지원</span>
+            </div>
+            <div class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center shadow-sm">
+              <i class="fa-solid fa-plus text-orange-500 transition duration-300 acc-icon" id="icon-acc1"></i>
+            </div>
+          </button>
+          <div id="acc1" class="accordion-content bg-gradient-to-b from-slate-50/50 to-transparent">
+            <div class="accordion-inner pb-8 pt-2">
+              <ul class="text-base text-slate-700 space-y-5">
+                <li class="flex items-start leading-relaxed bg-white p-5 rounded-2xl shadow-sm">
+                  <i class="fa-solid fa-check-circle text-orange-500 mt-1 mr-4 text-lg"></i>
+                  <span>악성 민원으로부터 실무자를 보호하고, 창작자의 특수성(야간 작업 등)을 반영한 <strong
+                      class="text-black bg-orange-100 px-2 py-0.5 rounded">문화예술 권익보호 조례</strong> 개정 및 강화</span>
+                </li>
+                <li class="flex items-start leading-relaxed bg-white p-5 rounded-2xl shadow-sm">
+                  <i class="fa-solid fa-check-circle text-orange-500 mt-1 mr-4 text-lg"></i>
+                  <span>제주 무사증 제도를 전략적으로 결합한 <strong class="text-black">제주 글로벌 웹툰 캠프</strong> 유치하고 도내 대학과 학점 연계를 위한 제도적 시스템을 구축합니다.</span>
+                </li>
+                <li class="flex items-start leading-relaxed bg-white p-5 rounded-2xl shadow-sm">
+                  <i class="fa-solid fa-check-circle text-orange-500 mt-1 mr-4 text-lg"></i>
+                  <span>도내 예술지원 분야를 '만화'를 명시하고, 만화관련 사업 진행시 도내 창작자들이 소외되지 않도록 쿼터제 등 제도적인 장치를 마련합니다.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Schools -->
+        <div class="box fade-up">
+          <button onclick="toggleAcc('acc2')"
+            class="w-full text-left px-8 md:px-10 py-6 md:py-8 flex justify-between items-center font-black text-slate-800 hover:bg-white/50 transition">
+            <div class="flex items-center">
+              <div
+                class="w-14 h-14 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl flex items-center justify-center mr-6 text-blue-600 shadow-inner">
+                <i class="fa-solid fa-school text-xl"></i>
+              </div>
+              <span class="text-lg md:text-xl">학교/대학: 교육 소외 극복 및 지역 기반 인프라</span>
+            </div>
+            <div class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center shadow-sm">
+              <i class="fa-solid fa-plus text-blue-500 transition duration-300 acc-icon" id="icon-acc2"></i>
+            </div>
+          </button>
+          <div id="acc2" class="accordion-content bg-gradient-to-b from-blue-50/20 to-transparent">
+            <div class="accordion-inner pb-8 pt-2">
+              <ul class="text-base text-slate-700 space-y-5">
+                <li class="flex items-start leading-relaxed bg-white p-5 rounded-2xl shadow-sm">
+                  <i class="fa-solid fa-check-circle text-blue-500 mt-1 mr-4 text-lg"></i>
+                  <span>독립 학과 부재로 박탈된 <strong class="text-black bg-blue-100 px-2 py-0.5 rounded">대학만화최강전</strong> 등의 참여
+                    기회를 보완하기 위한 도 차원의 트랙 운영안 마련합니다.</span>
+                </li>
+                <li class="flex items-start leading-relaxed bg-white p-5 rounded-2xl shadow-sm">
+                  <i class="fa-solid fa-check-circle text-blue-500 mt-1 mr-4 text-lg"></i>
+                  <span>신기술(AI) 교육과 실제 창작 현장을 잇는 실전형 산학 협력 파이프라인 구축합니다.</span>
+                </li>
+                <li class="flex items-start leading-relaxed bg-white p-5 rounded-2xl shadow-sm">
+                  <i class="fa-solid fa-check-circle text-blue-500 mt-1 mr-4 text-lg"></i>
+                  <span>타 지역 대학생들과의 정보 격차 해소를 위한 전국구 네트워킹 행사 제주 유치합니다.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Institutions -->
+        <div class="box fade-up">
+          <button onclick="toggleAcc('acc3')"
+            class="w-full text-left px-8 md:px-10 py-6 md:py-8 flex justify-between items-center font-black text-slate-800 hover:bg-white/50 transition">
+            <div class="flex items-center">
+              <div
+                class="w-14 h-14 bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl flex items-center justify-center mr-6 text-purple-600 shadow-inner">
+                <i class="fa-solid fa-handshake-angle text-xl"></i>
+              </div>
+              <span class="text-lg md:text-xl">공공기관: 창작자 친화적 운영 가이드 구축</span>
+            </div>
+            <div class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center shadow-sm">
+              <i class="fa-solid fa-plus text-purple-500 transition duration-300 acc-icon" id="icon-acc3"></i>
+            </div>
+          </button>
+          <div id="acc3" class="accordion-content bg-gradient-to-b from-purple-50/20 to-transparent">
+            <div class="accordion-inner pb-8 pt-2">
+              <ul class="text-base text-slate-700 space-y-5">
+                <li
+                  class="flex items-start leading-relaxed bg-purple-50 p-5 rounded-2xl shadow-sm border border-purple-100">
+                  <i class="fa-solid fa-lightbulb text-purple-500 mt-1 mr-4 text-lg"></i>
+                  <span class="italic font-medium text-purple-900">규정 준수와 창작 자유의 접점을 찾는 "창작 공간 상생 위원회" 정례화합니다.</span>
+                </li>
+                <li class="flex items-start leading-relaxed bg-white p-5 rounded-2xl shadow-sm">
+                  <i class="fa-solid fa-check-circle text-purple-500 mt-1 mr-4 text-lg"></i>
+                  <span>만화 관련 정책 수립 및 협약 개정 시 당사자(작가/기업) 참여 비중 정식 명문화합니다.</span>
+                </li>
+                <li class="flex items-start leading-relaxed bg-white p-5 rounded-2xl shadow-sm">
+                  <i class="fa-solid fa-check-circle text-purple-500 mt-1 mr-4 text-lg"></i>
+                  <span>시설 관리 중심 지표에서 <strong class="text-black bg-purple-100 px-2 py-0.5 rounded">창작자 만족도 및 정주
+                      여건</strong> 중심으로 KPI 평가 지표 전환합니다.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>          
+    </section>
+
+
+    <!-- Section 4: SURVEY / GAS Data Binding Placeholder -->
+    <section id="community" class="section fade-up dark">
+        <div class="section-header fade-up">
+            <span class="section-sub-title">JEJU MANAIN SURVEY</span>
+            <h2 class="section-title">제주 만화인 설문조사<br><sapn class="gradient-text">생생한 의견을 들려주세요!</sapn></h2>
+            <p class="section-description">
+                여러분의 생생한 경험담과 개선 아이디어가 리포트의 신뢰성을 완성합니다.<br>
+                지금 바로 설문에 참여해 제주 웹툰의 미래를 함께 설계해 주세요.
+            </p>
+        </div>
+            
+        <!-- GAS Data Output Area -->
+        <div class="box round dark fade-up">
+            <div class="flex justify-between items-center mb-4 border-b border-gray-700 pb-2">
+                <h3 class="text-lg font-bold text-jejuOrange">📝 실시간 창작자 보이스 (Google Sheets 연동)</h3>
+                <button onclick="fetchMockData()" class="text-sm bg-gray-700 hover:bg-gray-600 px-3 py-1 rounded transition">새로고침 ↻</button>
+            </div>
+            
+            <div id="gas-data-container" class="space-y-3 max-h-60 overflow-y-auto pr-2">
+                <!-- Data will be injected here by JS -->
+                <div class="animate-pulse flex space-x-4">
+                    <div class="flex-1 space-y-4 py-1">
+                        <div class="h-4 bg-gray-600 rounded w-3/4"></div>
+                        <div class="h-4 bg-gray-600 rounded w-1/2"></div>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center">
+              <a href="https://forms.gle/yi1NxVAtNnACEvWp8" target="_blank"
+                  class="main-btn bg-jejuOrange rounded-full transition-all transform hover:scale-105">
+                  <i class="fa-solid fa-clipboard-check mr-3 group-hover:rotate-12 transition-transform"></i> 의견 참여하기
+              </a>
+            </p>
+        </div>
+    </section>
+
+  <!-- Footer Section -->
+  <footer class="max-w-6xl mx-auto border-t border-slate-200 py-12 text-center" data-aos="fade-in">
+    <!--div
+      class="flex flex-wrap justify-center gap-4 md:space-x-8 mb-8 text-slate-500 text-xs font-bold uppercase tracking-widest text-center">
+      <span class="bg-slate-100 px-4 py-2 rounded-full shadow-sm">Policy Coordinator</span>
+      <span class="bg-slate-100 px-4 py-2 rounded-full shadow-sm">Social Researcher</span>
+      <span class="bg-slate-100 px-4 py-2 rounded-full shadow-sm">Jeju Webtoon Next Builder</span>
+    </div>
+    <div
+      class="inline-flex items-center justify-center w-12 h-12 bg-slate-900 rounded-full mb-4 text-white hover:bg-orange-600 transition-colors cursor-pointer">
+      <i class="fa-solid fa-pen-nib"></i>
+    </div-->
+    <div
+      class="inline-flex items-center justify-center w-12 h-12 bg-slate-900 rounded-full mb-4 text-white hover:bg-orange-600 transition-colors cursor-pointer"
+      onclick="window.scrollTo(0, 0)">
+      <i class="fa-solid fa-chevron-up"></i>
+    </div>
+    <p class="text-slate-400 font-medium">Jeju Webtoon Report © 2026 <a href="http://www.jejumanain.org" target="_blank" style="text-decoration: underline;">TOON PEOPLE'S SOLIDARITY</a>. All rights reserved.</p>
+  </footer>
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+    // Initialize AOS Animation
+    AOS.init({
+      once: true,
+      offset: 100,
+      duration: 800,
+      easing: 'ease-out-cubic',
+    });
+
+    // ScrollSpy for Floating Navigation
+    document.addEventListener('DOMContentLoaded', () => {
+      const sections = document.querySelectorAll('header[id], section[id]');
+      const navLinks = document.querySelectorAll('.nav-link');
+
+      const observerOptions = {
+        root: null,
+        rootMargin: '-20% 0px -60% 0px',
+        threshold: 0
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            navLinks.forEach(link => {
+              link.classList.remove('nav-active');
+              if (link.getAttribute('href') === '#' + id) {
+                link.classList.add('nav-active');
+              }
+            });
+          }
+        });
+      }, observerOptions);
+
+      sections.forEach(sec => {
+        observer.observe(sec);
+      });
+    });
+
+    // Data Definition
+    const corpusData = [
+      { name: '공간 운영 유연성', value: 45, info: '마감 시기 생리적 현상 및 몰입 환경 배려 필요' },
+      { name: '거버넌스 소통 활성화', value: 30, info: '협약 개정 및 정책 수립 시 사전 의견 수렴' },
+      { name: '행사 참여 실효성', value: 15, info: '지역 창작자가 주체가 되는 정책 이벤트 구성' },
+      { name: '교육 및 데뷔 기회', value: 7, info: '도내 대학생 공모전 및 기획 전시 지원' },
+      { name: '행정 절차 간소화', value: 3, info: '창작 활동에 집중할 수 있는 행정 환경' }
+    ];
+
+    const gapData = [
+      { subject: '시설 보안/관리', admin: 98, creator: 25 },
+      { subject: '창작 자율성', admin: 30, creator: 95 },
+      { subject: '행정 편의성', admin: 90, creator: 20 },
+      { subject: '창작자의 권익', admin: 35, creator: 88 },
+      { subject: '대외 실적', admin: 85, creator: 30 },
+      { subject: '민원 대응 리스크', admin: 95, creator: 35 }
+    ];
+
+    // Chart Logic
+    let currentChart;
+    const ctx = document.getElementById('mainChart').getContext('2d');
+
+    // Chart Design System
+    Chart.defaults.font.family = "'Pretendard', -apple-system, sans-serif";
+    Chart.defaults.color = '#64748b';
+
+    function renderChart(type) {
+      if (currentChart) currentChart.destroy();
+
+      const config = type === 'freq' ? {
+        type: 'bar',
+        data: {
+          labels: corpusData.map(d => d.name),
+          datasets: [{
+            label: '언급 비중 (%)',
+            data: corpusData.map(d => d.value),
+            backgroundColor: function (context) {
+              const chart = context.chart;
+              const { ctx, chartArea } = chart;
+              if (!chartArea) return;
+              const gradient = ctx.createLinearGradient(0, 0, chartArea.right, 0);
+              gradient.addColorStop(0, '#f97316');
+              gradient.addColorStop(1, '#ea580c');
+              return gradient;
+            },
+            borderRadius: 8,
+            barThickness: 24,
+          }]
+        },
+        options: {
+          indexAxis: 'y',
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              backgroundColor: 'rgba(15, 23, 42, 0.9)',
+              padding: 12,
+              titleFont: { size: 14, weight: 'bold' },
+              bodyFont: { size: 13 },
+              cornerRadius: 8,
+              displayColors: false
+            }
+          },
+          scales: {
+            x: { grid: { display: false }, ticks: { display: false }, border: { display: false } },
+            y: { grid: { display: false }, border: { display: false }, ticks: { font: { weight: '600', size: 13 }, color: '#334155' } }
+          },
+          animation: {
+            duration: 1200,
+            easing: 'easeOutQuart'
+          }
+        }
+      } : {
+        type: 'radar',
+        data: {
+          labels: gapData.map(d => d.subject),
+          datasets: [
+            {
+              label: '행정 인식 (KPI)',
+              data: gapData.map(d => d.admin),
+              borderColor: '#1e293b',
+              backgroundColor: 'rgba(30, 41, 59, 0.15)',
+              borderWidth: 2,
+              fill: true,
+              pointBackgroundColor: '#1e293b',
+              pointRadius: 4,
+              pointHoverRadius: 6
+            },
+            {
+              label: '창작자 니즈 (코퍼스)',
+              data: gapData.map(d => d.creator),
+              borderColor: '#ea580c',
+              backgroundColor: 'rgba(234, 88, 12, 0.25)',
+              borderWidth: 2,
+              fill: true,
+              pointBackgroundColor: '#ea580c',
+              pointRadius: 4,
+              pointHoverRadius: 6
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              position: 'bottom',
+              labels: { padding: 20, font: { weight: '600' } }
+            },
+            tooltip: {
+              backgroundColor: 'rgba(15, 23, 42, 0.9)',
+              padding: 12,
+              cornerRadius: 8
+            }
+          },
+          scales: {
+            r: {
+              suggestedMin: 0,
+              suggestedMax: 100,
+              ticks: { display: false, stepSize: 20 },
+              grid: { color: 'rgba(0,0,0,0.05)' },
+              angleLines: { color: 'rgba(0,0,0,0.05)' },
+              pointLabels: { font: { weight: '600', size: 12 }, color: '#475569' }
+            }
+          },
+          animation: {
+            duration: 1200,
+            easing: 'easeOutQuart'
+          }
+        }
+      };
+
+      currentChart = new Chart(ctx, config);
+    }
+
+    // Info List Rendering Logic
+    function renderInfoList(type) {
+      const container = document.getElementById('info-list-container');
+
+      // Animate fade out
+      container.style.opacity = '0';
+      container.style.transform = 'translateY(10px)';
+      container.style.transition = 'all 0.3s ease';
+
+      setTimeout(() => {
+        if (type === 'freq') {
+          container.innerHTML = corpusData.map((item, index) => `
+            <div class="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:border-orange-200 transition-all transform hover:-translate-y-1" style="animation: slideIn 0.4s ease-out ${index * 0.1}s forwards; opacity: 0;">
+                <div class="flex justify-between items-center mb-2">
+                    <span class="font-bold text-sm text-slate-800 flex items-center">
+                      <div class="w-6 h-6 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center text-xs mr-2">${index + 1}</div>
+                      ${item.name}
+                    </span>
+                    <span class="bg-orange-50 text-orange-600 px-3 py-1 rounded-full font-mono font-black text-sm">${item.value}%</span>
+                </div>
+                <p class="text-xs text-slate-500 leading-relaxed pl-8">${item.info}</p>
+            </div>
+          `).join('');
+        } else {
+          container.innerHTML = `
+            <div class="bg-gradient-to-br from-slate-900 to-slate-800 text-white p-8 rounded-3xl shadow-xl border border-slate-700 relative overflow-hidden h-full">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-orange-500 rounded-bl-full mix-blend-overlay opacity-20"></div>
+                <h4 class="font-black text-lg mb-6 flex items-center">
+                    <i class="fa-solid fa-arrows-left-right mr-3 text-orange-400"></i> 격차 분석 인사이트
+                </h4>
+                <div class="space-y-6 opacity-90 leading-relaxed relative z-10">
+                    <div class="flex items-start">
+                      <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center mr-4 shrink-0"><i class="fa-solid fa-bolt text-orange-400"></i></div>
+                      <p><span class="font-bold text-orange-300 block mb-1">자율성 격차 최대로</span> 행정은 시설 관리(98점)를 우선적으로 고려하나, 창작자는 자율성(95점)을 핵심 생존권으로 인식하고 있어 가장 큰 간극이 발생합니다.</p>
+                    </div>
+                    <div class="flex items-start">
+                      <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center mr-4 shrink-0"><i class="fa-solid fa-chart-line text-blue-400"></i></div>
+                      <p><span class="font-bold text-blue-300 block mb-1">성과 지표의 한계</span> 대외 실적 중심의 KPI는 실제 창작자의 정주 여건 개선이나 삶의 질 향상으로 직결되지 못하는 구조적 문제가 있습니다.</p>
+                    </div>
+                    <div class="flex items-start">
+                      <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center mr-4 shrink-0"><i class="fa-solid fa-shield-halved text-purple-400"></i></div>
+                      <p><span class="font-bold text-purple-300 block mb-1">리스크 관리의 편중</span> 기관의 보수적 공간 규정은 창작자 편의보다는 오직 '민원 대응 및 방어'(95점)에 치중된 결과로 파악됩니다.</p>
+                    </div>
+                </div>
+            </div>
+          `;
+        }
+
+        // Animate fade in
+        container.style.opacity = '1';
+        container.style.transform = 'translateY(0)';
+      }, 300);
+    }
+
+    // Keyframe for list slide in
+    const style = document.createElement('style');
+    style.innerHTML = `
+      @keyframes slideIn {
+        from { opacity: 0; transform: translateX(20px); }
+        to { opacity: 1; transform: translateX(0); }
+      }
+    `;
+    document.head.appendChild(style);
+
+    function updateChart(type) {
+      renderChart(type);
+      renderInfoList(type);
+
+      const btnFreq = document.getElementById('btn-freq');
+      const btnGap = document.getElementById('btn-gap');
+
+      if (type === 'freq') {
+        btnFreq.className = 'flex-1 py-3 md:py-4 rounded-full tab-btn tab-active shadow-sm text-slate-800 transition-all';
+        btnGap.className = 'flex-1 py-3 md:py-4 rounded-full tab-btn text-slate-500 hover:text-slate-800 hover:bg-white/50 transition-all';
+      } else {
+        btnFreq.className = 'flex-1 py-3 md:py-4 rounded-full tab-btn text-slate-500 hover:text-slate-800 hover:bg-white/50 transition-all';
+        btnGap.className = 'flex-1 py-3 md:py-4 rounded-full tab-btn tab-active shadow-sm text-slate-800 transition-all text-blue-600 bg-white';
+        // Force the highlight for gap tab to look like an active tab properly.
+      }
+    }
+
+    function toggleAcc(id) {
+      const content = document.getElementById(id);
+      const icon = document.getElementById('icon-' + id);
+      const isActive = content.classList.contains('active');
+
+      document.querySelectorAll('.accordion-content').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.acc-icon').forEach(el => {
+        el.classList.remove('fa-minus');
+        el.classList.add('fa-plus');
+        el.style.transform = 'rotate(0deg)';
+      });
+
+      if (!isActive) {
+        content.classList.add('active');
+        icon.classList.remove('fa-plus');
+        icon.classList.add('fa-minus');
+        icon.style.transform = 'rotate(180deg)';
+      }
+    }
+
+    window.onload = () => {
+      renderChart('freq');
+      renderInfoList('freq');
+    };
+  </script>
+</body>
+</html>
+
+<script src="./resource/common.js"></script>
