@@ -123,7 +123,19 @@
             fetch(GAS_API_URL)
                 .then(response => response.json())
                 .then(data => {
-                    renderData(data);
+                    if (data.length === 0) {
+                        container.innerHTML = '<div class="text-center py-4">아직 등록된 의견이 없습니다.</div>';
+                        return;
+                    }
+
+                    // 1. 데이터를 무작위로 섞기 (Fisher-Yates Shuffle 방식의 간편 버전)
+                    const shuffled = data.sort(() => 0.5 - Math.random());
+
+                    // 2. 섞인 데이터 중 앞에서부터 5개만 선택
+                    const selectedData = shuffled.slice(0, 5);
+
+                    // 3. 선택된 5개만 화면에 렌더링
+                    renderData(selectedData);
                 })
                 .catch(error => {
                     console.error('Error fetching data:', error);
