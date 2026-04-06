@@ -113,7 +113,7 @@
 
         // 4. Google Apps Script Data Binding (Mock & Implementation Guide)
         // 실제 배포 시에는 아래 URL을 본인의 GAS 배포 웹앱 URL로 변경해야 합니다.
-        const GAS_API_URL = "https://script.google.com/macros/s/AKfycbzsMs_kCz85OPw6DsYjZ9s6Gqlo88RiXDflZpxMY5J5BWM3rQi_qTbiYmbd4YDAnFYPsg/exec"
+        const GAS_API_URL = "https://script.google.com/macros/s/AKfycbxETRhYGT38kotiM-qe-Q8jjiwYB91R5109zDmTBtbgxZlXs4M6UH_3XzGN5jDefXYrlA/exec"
 
         function fetchMockData() {
             const container = document.getElementById('gas-data-container');
